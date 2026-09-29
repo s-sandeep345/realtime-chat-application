@@ -1,7 +1,7 @@
-import {FormEvent,useState} from "react";
+import {useState} from "react";
 import {Eye,EyeOff,MessageCircle} from "lucide-react";
 import {useStore} from "../store";
-import type {FormEvent} from 'react';
+import type {FormEvent} from "react";
 export default function Login(){const[email,setEmail]=useState("alex@example.com"),[password,setPassword]=useState("password123"),[show,setShow]=useState(false),[error,setError]=useState("");
  const setState=useStore;const submit=(e:FormEvent)=>{e.preventDefault();if(!email.includes("@")||password.length<6){setError("Enter a valid email and password.");return}setState.setState({user:{id:"u1",name:"Alex Johnson",email,avatar:"https://i.pravatar.cc/150?img=12",online:true,bio:"Frontend developer"}})};
  return <div className="min-h-screen grid place-items-center bg-slate-100 px-4 dark:bg-slate-950"><form onSubmit={submit} className="w-full max-w-md rounded-3xl bg-white p-8 shadow-xl dark:bg-slate-900">
